@@ -1,12 +1,16 @@
-CXX=g++
+CXX ?= g++
+CXXFLAGS ?= -std=c++17 -Wall -Wextra
+CXXFLAGS += $(shell pkg-config --cflags raylib)
+LDLIBS += $(shell pkg-config --libs raylib)
 
-PATH = /home/nazk/prs/cppcours/vcpkg/installed/x64-linux
+TARGET = game
 
-CXXflags = -I$(PATH)/include
+all: $(TARGET)
 
-LDflags = -L$(PATH)/lib
+$(TARGET): main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp -o $@ $(LDLIBS)
 
-LDlibs = -lopengl32 -lgdi32
+clean:
+	rm -f $(TARGET)
 
-game: main.cpp 
-	g++ main.cpp -o game $(CXXflags) $(LDflags) $(LDlibs)
+.PHONY: all clean

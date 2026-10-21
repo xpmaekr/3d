@@ -1,6 +1,12 @@
 #include<raylib.h>
+#include <iostream>
+using namespace std;
+
 
 const int greedsize = 20;
+
+//colors
+const Color white_color = {255,255,255,255};
 const Color greedcolor = {80,80,80,255};
 
 const int countx = 800 / greedsize;
@@ -21,7 +27,25 @@ void placing(){
     int greedx = posx / greedsize * greedsize;
     int greedy = posy / greedsize * greedsize;
 
-    DrawRectangle(greedx,greedy,greedsize,greedsize,greedcolor);
+    DrawRectangle(greedx,greedy,greedsize,greedsize,white_color);
+
+    if (IsKeyPressed(KEY_T)){
+        walls[posy / greedsize][posx / greedsize] = true;
+    }
+
+}
+
+void render_walls(){
+    cout << "ok" << "\n";
+    for(int y = 0; y < county; y++){
+        for (int x = 0; x < countx; x++){
+            cout << "ok2" << "\n";
+            if (walls[y][x]){
+                cout << "ok3" << "\n";
+                DrawRectangle(x * greedsize,y * greedsize, greedsize, greedsize, greedcolor);
+            }
+        }
+    }
 }
 
 void render_greed(){
@@ -42,8 +66,8 @@ int main(){
         BeginDrawing();
         ClearBackground({0,0,0,255});
 
+        render_walls();
         render_greed();
-        DrawRectangle(100,100,100,100,{255,0,0,255});
         placing();
 
         EndDrawing();

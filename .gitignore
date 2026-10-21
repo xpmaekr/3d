@@ -1,0 +1,4 @@
+game
+compile
+*.o
+*.out
