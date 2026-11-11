@@ -20,6 +20,7 @@ const int screen_h = county * gridsize;
 const Color white_color = RAYWHITE;
 const Color gridcolor = LIGHTGRAY;
 const Color gray_color = LIGHTGRAY;
+const Color black_color = BLACK;
 
 // Карта: true — стена, false — пусто
 extern bool walls[county][countx];

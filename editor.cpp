@@ -42,3 +42,26 @@ void clearmap(){
         }
     }
 }
+
+int main(){
+    InitWindow(screen_v, screen_h, "raycasting");
+    SetTargetFPS(60);
+    load();
+
+    while (!WindowShouldClose()) {
+
+        BeginDrawing();
+        ClearBackground(black_color);
+
+        rendergrid();
+        renderwalls();
+        place_or_delete();
+
+        EndDrawing();
+    }
+
+    save();
+
+    CloseWindow();
+    return 0;
+}

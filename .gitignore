@@ -1,4 +1,5 @@
 game
+editor
 compile
 *.o
 *.out

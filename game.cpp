@@ -5,10 +5,9 @@ int main() {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        place_or_delete();
 
         BeginDrawing();
-        ClearBackground(white_color);
+        ClearBackground(black_color);
 
         rendergrid();
         renderwalls();

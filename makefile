@@ -3,19 +3,27 @@ CXXFLAGS ?= -std=c++17 -Wall -Wextra
 CXXFLAGS += $(shell pkg-config --cflags raylib)
 LDLIBS += $(shell pkg-config --libs raylib)
 
-TARGET = game
-SRCS = game.cpp dependences.cpp editor.cpp
-OBJS = $(SRCS:.cpp=.o)
+TARGETS = game editor
+COMMON_OBJS = dependences.o
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): $(OBJS)
-	$(CXX) $(OBJS) -o $@ $(LDLIBS)
+game: game.o $(COMMON_OBJS)
+	$(CXX) $^ -o $@ $(LDLIBS)
+
+editor: editor.o $(COMMON_OBJS)
+	$(CXX) $^ -o $@ $(LDLIBS)
 
 %.o: %.cpp dependences.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:
-	rm -f $(TARGET) $(OBJS)
+run-game: game
+	./game
 
-.PHONY: all clean
+run-editor: editor
+	./editor
+
+clean:
+	rm -f $(TARGETS) $(COMMON_OBJS) game.o editor.o
+
+.PHONY: all clean run-game run-editor
