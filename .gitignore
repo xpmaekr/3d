@@ -2,3 +2,6 @@ game
 compile
 *.o
 *.out
+map.txt
+3d.gpr
+3d.rep/
