@@ -43,8 +43,3 @@ bool cell_inside(int cx, int cy);
 void place_or_delete();
 void render_grid();
 void clearmap();
-
-// main.cpp / game.cpp
-void placing();
-void render_walls();
-void render_greed();
