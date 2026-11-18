@@ -2,6 +2,7 @@ game
 editor
 compile
 *.o
+*.d
 *.out
 map.txt
 3d.gpr

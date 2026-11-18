@@ -57,6 +57,10 @@ int main(){
         renderwalls();
         place_or_delete();
 
+        if (IsKeyPressed(KEY_C)){
+            clearmap();
+        }
+
         EndDrawing();
     }
 
