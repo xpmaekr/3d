@@ -1,10 +1,11 @@
 #include "dependences.hpp"
 #include "player.hpp"
 
+// Точка входа игры: окно, карта, цикл отрисовки.
 int main() {
     InitWindow(screen_w, screen_h, "raycasting");
     SetTargetFPS(60);
-    load();
+    load(); // загрузка карты из map.txt
 
     Player player;
 
@@ -13,13 +14,11 @@ int main() {
         BeginDrawing();
         ClearBackground(black_color);
 
-        
+        rendergrid();   // сетка
+        renderwalls();  // стены
 
-        rendergrid();
-        renderwalls();
-
-        player.render();
-        player.update();
+        player.render(); // игрок и направление взгляда
+        player.update(); // управление
 
         EndDrawing();
     }
