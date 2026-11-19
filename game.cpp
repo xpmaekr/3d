@@ -2,7 +2,7 @@
 #include "player.hpp"
 
 int main() {
-    InitWindow(screen_v, screen_h, "raycasting");
+    InitWindow(screen_w, screen_h, "raycasting");
     SetTargetFPS(60);
     load();
 

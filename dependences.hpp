@@ -12,8 +12,8 @@ const int gridsize = 40;
 const int countx = 20;
 const int county = 15;
 
-// Размер экрана в пикселях
-const int screen_v = countx * gridsize;
+// Размер экрана в пикселях (w — ширина, h — высота)
+const int screen_w = countx * gridsize;
 const int screen_h = county * gridsize;
 
 // Цвета

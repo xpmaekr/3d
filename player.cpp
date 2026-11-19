@@ -4,13 +4,11 @@
 
 
 Player::Player(){
-    x_pl = screen_v/2;
+    x_pl = screen_w/2;
     y_pl = screen_h/2;
 
     vis_pl = 80;
     angle = 0;
-    const int speed = 5;
-
 }
 
 void Player::render(){
@@ -26,6 +24,7 @@ void Player::update(){
         angle+=0.01;
     }
     if(IsKeyDown(KEY_W)){
-        d
+        x_pl += cos(angle) * speed;
+        y_pl -= sin(angle) * speed;
     }
 }

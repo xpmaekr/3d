@@ -35,12 +35,12 @@ void save(){
 }
 
 void rendergrid(){
-    for (int x = 0; x < screen_v; x+=gridsize){
+    for (int x = 0; x < screen_w; x+=gridsize){
         DrawLine(x,0,x,screen_h,gridcolor);
     }
 
     for (int x = 0; x < screen_h; x+=gridsize){
-        DrawLine(0,x,screen_v,x,gridcolor);
+        DrawLine(0,x,screen_w,x,gridcolor);
     }
 }
 

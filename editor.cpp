@@ -26,12 +26,12 @@ void place_or_delete(){
 }
 
 void render_grid(){
-    for (int x = 0; x < screen_v; x+=gridsize){
+    for (int x = 0; x < screen_w; x+=gridsize){
         DrawLine(x,0,x,screen_h,gray_color);
     }
 
     for (int x = 0; x < screen_h; x+=gridsize){
-        DrawLine(0,x,screen_v,x,gray_color);
+        DrawLine(0,x,screen_w,x,gray_color);
     }
 }
 
@@ -44,7 +44,7 @@ void clearmap(){
 }
 
 int main(){
-    InitWindow(screen_v, screen_h, "raycasting");
+    InitWindow(screen_w, screen_h, "raycasting");
     SetTargetFPS(60);
     load();
 
@@ -59,6 +59,9 @@ int main(){
 
         if (IsKeyPressed(KEY_C)){
             clearmap();
+        }
+        if (IsKeyPressed(KEY_S)){
+            save();
         }
 
         EndDrawing();
