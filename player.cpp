@@ -14,8 +14,11 @@ Player::Player(){
 // Рисует игрока точкой и жёлтым лучом направление взгляда.
 // В raylib ось Y направлена вниз, поэтому y уменьшается.
 void Player::render(){
+    for (My_ray my_ray:My_rays){
+        my_ray.render(x_pl,y_pl,angle);
+    }
+
     DrawCircle(x_pl,y_pl,5,RED);
-    DrawLine(x_pl,y_pl,x_pl+cos(angle)*vis_pl,y_pl-sin(angle)*vis_pl,YELLOW);
 }
 
 // Управление: A/D — поворот, W — движение вперёд по направлению взгляда

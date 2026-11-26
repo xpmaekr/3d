@@ -12,7 +12,7 @@ int main() {
     while (!WindowShouldClose()) {
 
         BeginDrawing();
-        ClearBackground(black_color);
+        ClearBackground(BLACK);
 
         rendergrid();   // сетка
         renderwalls();  // стены

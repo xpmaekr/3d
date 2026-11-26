@@ -1,28 +1,13 @@
 #pragma once
 
+#include "conf.hpp"
 #include <raylib.h>
 #include <fstream>
 #include <iostream>
 #include <vector>
 
+
 using namespace std;
-
-// Размер клетки поля в пикселях
-const int gridsize = 40;
-// Число клеток по горизонтали
-const int countx = 20;
-// Число клеток по вертикали
-const int county = 15;
-
-// Размер экрана в пикселях (w — ширина, h — высота)
-const int screen_w = countx * gridsize;
-const int screen_h = county * gridsize;
-
-// Цвета
-const Color white_color = RAYWHITE;
-const Color gridcolor = LIGHTGRAY;
-const Color gray_color = LIGHTGRAY;
-const Color black_color = BLACK;
 
 // Карта: true — стена, false — пусто
 extern bool walls[county][countx];

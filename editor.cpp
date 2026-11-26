@@ -26,17 +26,17 @@ void place_or_delete(){
         walls[cy][cx] = false;
     }
 
-    DrawRectangle(cx * gridsize, cy * gridsize, gridsize, gridsize, white_color);
+    DrawRectangle(cx * gridsize, cy * gridsize, gridsize, gridsize, RAYWHITE);
 }
 
 // Рисует сетку для редактора
 void render_grid(){
     for (int x = 0; x < screen_w; x+=gridsize){
-        DrawLine(x,0,x,screen_h,gray_color);
+        DrawLine(x,0,x,screen_h,LIGHTGRAY);
     }
 
     for (int x = 0; x < screen_h; x+=gridsize){
-        DrawLine(0,x,screen_w,x,gray_color);
+        DrawLine(0,x,screen_w,x,LIGHTGRAY);
     }
 }
 
@@ -59,7 +59,7 @@ int main(){
     while (!WindowShouldClose()) {
 
         BeginDrawing();
-        ClearBackground(black_color);
+        ClearBackground(BLACK);
 
         rendergrid();
         renderwalls();

@@ -1,6 +1,9 @@
 #pragma once
+#include <vector>
+#include "my_ray.hpp"
+using namespace std;
 
-// Игрок: позиция, угол взгляда и луч обзора.
+// Игрок: позиция, угол взгляда и набор лучей обзора.
 class Player{
 public:
     Player();   // Центр поля, взгляд вправо (angle = 0)
@@ -16,4 +19,6 @@ private:
     const int speed = 2; // шаг движения за кадр
 
     double angle; // угол взгляда в радианах
+
+    vector<My_ray> My_rays; // лучи обзора (пока пустой, заполнение позже)
 };
